@@ -46,6 +46,22 @@ class Dosen extends Orang {
     }
 }
 
+// Definisi kelas Guru (turunan dari Orang)
+class Guru extends Orang {
+    constructor(nama, alamat, nuptk) {
+        super(nama, alamat);  // Memanggil konstruktor kelas induk
+        this.nuptk = nuptk;
+    }
+
+    tampilkanInformasi() {
+        return `${super.tampilkanInformasi()}, NUPTK: ${this.nuptk}`;
+    }
+
+    tampilkanPeran() {
+        return "Peran: Guru";
+    }
+}
+
 // Definisi OrangView untuk menampilkan data
 class OrangView {
     render(orang) {
@@ -66,21 +82,25 @@ class OrangController {
     tampilkanOrang() {
         const mahasiswa = new this.model.Mahasiswa("Budi", "Jl. Merdeka", "123456");
         const dosen = new this.model.Dosen("Pak Agus", "Jl. Mawar", "654321");
+        const guru = new this.model.Guru("Ibu Rini", "Jl. Melati", "789123");
 
         console.log(this.view.render(mahasiswa));
         console.log(this.view.render(dosen));
+        console.log(this.view.render(guru));
     }
 }
 
 // Inisialisasi dan Penggunaan Controller
-const orangController = new OrangController({ Mahasiswa, Dosen }, new OrangView());
+const orangController = new OrangController({ Mahasiswa, Dosen, Guru }, new OrangView());
 orangController.tampilkanOrang();
 
 // Menggunakan polimorfisme (memeriksa peran)
 const orang1 = new Orang("Andi", "Jl. Sudirman");
 const mahasiswa1 = new Mahasiswa("Budi", "Jl. Merdeka", "123456");
 const dosen1 = new Dosen("Pak Agus", "Jl. Mawar", "654321");
+const guru1 = new Guru("Ibu Rini", "Jl. Melati", "789123");
 
 console.log(orang1.tampilkanPeran());    // Output: Peran: Orang biasa
 console.log(mahasiswa1.tampilkanPeran()); // Output: Peran: Mahasiswa
 console.log(dosen1.tampilkanPeran());     // Output: Peran: Dosen
+console.log(guru1.tampilkanPeran());      // Output: Peran: Guru
