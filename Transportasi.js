@@ -35,14 +35,12 @@ class Pesawat extends Transportasi {
     }
 }
 
-// View class (now it logs to console)
 class TransportasiView {
     render(transportasi) {
-        return transportasi.bergerak();  // Simply return the string
+        return transportasi.bergerak();
     }
 }
 
-// Controller class (now it logs to console)
 class TransportasiController {
     constructor(model, view) {
         this.model = model;
@@ -53,7 +51,7 @@ class TransportasiController {
         const kereta = new this.model.Kereta();
         const pesawat = new this.model.Pesawat();
 
-        // Output to the console instead of manipulating the DOM
+        // Output 
         console.log(this.view.render(kereta));
         console.log(this.view.render(pesawat));
     }
