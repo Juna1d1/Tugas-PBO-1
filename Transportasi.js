@@ -16,22 +16,22 @@ class Transportasi {
 // Implementasi kelas turunan
 class Kereta extends Transportasi {
     constructor() {
-        super('Kereta');
+        super('Kereta MRT');
     }
 
     bergerak() {
-        return `${this.jenis} bergerak di rel.`;
+        return `${this.jenis} bergerak di atas rel.`;
     }
 }
 
 // Implementasi kelas turunan
 class Pesawat extends Transportasi {
     constructor() {
-        super('Pesawat');
+        super('Burung');
     }
 
     bergerak() {
-        return `${this.jenis} terbang di udara.`;
+        return `${this.jenis} terbang di udara dengan bebas.`;
     }
 }
 
