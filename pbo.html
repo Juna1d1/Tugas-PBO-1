@@ -1,0 +1,156 @@
+<div id="content" style="text-align: center; margin-top: 50px;"></div>
+
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #content {
+    width: 350px;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    color: #333;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .input-container {
+    position: relative;
+    margin: 20px 0;
+  }
+
+  .input-container input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .input-container input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+  }
+
+  .input-container i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #ccc;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+
+  #login {
+    background-color: #6a11cb;
+    color: white;
+  }
+
+  #login:hover {
+    background-color: #2575fc;
+  }
+
+  #cancel {
+    background-color: #f44336;
+    color: white;
+  }
+
+  #cancel:hover {
+    background-color: #d32f2f;
+  }
+
+  #welcome-message {
+    font-size: 1.2rem;
+    color: #6a11cb;
+  }
+</style>
+
+<script>
+  const pbo = {
+    model: {
+      mahasiswa: [
+        { username: "ratih", pin: "ratih123" },
+        { username: "afwanda", pin: "afwanda123" },
+        { username: "shandy", pin: "sandi123" },
+      ],
+    },
+    services: {
+      validateLogin: function (username, pin) {
+        return pbo.model.mahasiswa.some(
+          (mhs) => mhs.username === username && mhs.pin === pin
+        );
+      },
+    },
+    view: {
+      signform: function () {
+        return `
+          <h2>Login to Your Account</h2>
+          <div class="input-container">
+            <i class="fa fa-user"></i>
+            <input type="text" id="username" placeholder="Username">
+          </div>
+          <div class="input-container">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="pin" placeholder="Pin">
+          </div>
+          <button id="login">Login</button>
+          <button id="cancel">Cancel</button>
+        `;
+      },
+    },
+    controller: {
+      init: function () {
+        pbo.controller.signform();
+        pbo.controller.bindEvents();
+      },
+      signform: function () {
+        document.getElementById("content").innerHTML = pbo.view.signform();
+      },
+      bindEvents: function () {
+        document.getElementById("login").onclick = function () {
+          const username = document.getElementById("username").value;
+          const pin = document.getElementById("pin").value;
+
+          if (pbo.services.validateLogin(username, pin)) {
+            document.getElementById("content").innerHTML = `
+              <h2 id="welcome-message">Welcome, ${username}!</h2>
+            `;
+          } else {
+            alert("Invalid username or pin!");
+          }
+        };
+
+        document.getElementById("cancel").onclick = function () {
+          document.getElementById("username").value = "";
+          document.getElementById("pin").value = "";
+        };
+      },
+    },
+  };
+
+  pbo.controller.init();
+</script>
