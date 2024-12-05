@@ -1,0 +1,369 @@
+/* Global Style */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+
+/* Cyberpunk Glow */
+.cyberpunk-glow {
+    text-shadow: 0 0 5px #f72585, 0 0 10px #f72585, 0 0 20px #f72585, 
+                 0 0 40px #7209b7, 0 0 80px #7209b7, 0 0 120px #7209b7;
+}
+
+/* Login Section */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background: rgba(15, 12, 41, 0.9);
+    border: 1px solid #7209b7;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    color: #e0e0e0;
+    box-shadow: 0 0 15px #f72585, 0 0 30px #7209b7;
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #1f1f1f;
+    border: 1px solid #3a0ca3;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.login-card input:focus {
+    border-color: #f72585;
+    outline: none;
+    box-shadow: 0 0 10px #f72585;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    background: #7209b7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px #f72585, 0 0 30px #7209b7;
+    transition: all 0.3s ease;
+}
+
+.login-card button:hover {
+    background: #f72585;
+    box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
+}
+
+.logout-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    background: #f72585;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 0 15px #7209b7, 0 0 30px #f72585;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #7209b7;
+    box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
+}
+
+/* Snack Section */
+#snack-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #e0e0e0;
+}
+
+/* Header */
+.snack-header {
+    text-align: center;
+    background: linear-gradient(to right, #6a0572, #a81b92);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
+}
+
+.snack-header h1 {
+    font-size: 2.5rem;
+}
+
+/* Snack Cards */
+.snack-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.snack-card {
+    background: rgba(15, 12, 41, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 15px #7209b7, 0 0 30px #f72585;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.snack-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
+}
+
+.snack-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px #3a0ca3;
+}
+
+.snack-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.snack-card p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.snack-card button {
+    padding: 10px 20px;
+    background: #f72585;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 0 15px #7209b7;
+    transition: background 0.3s;
+}
+
+.snack-card button:hover {
+    background: #7209b7;
+    box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
+}
+
+/* Notification */
+#notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f72585;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #7209b7;
+    animation: fadeInOut 3s ease forwards;
+    z-index: 1000;
+    font-size: 0.9em;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Tombol Aksi Keranjang */
+.cart-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.cart-action-btn {
+    padding: 10px 20px;
+    background-color: #0ff; /* Neon Cyan */
+    color: #000;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cart-action-btn:hover {
+    background-color: #ff00ff; /* Neon Magenta */
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Daftar Item di Keranjang */
+#cart-list {
+    margin: 20px 0;
+}
+
+/* Item Keranjang */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #1a1a1a, #333); /* Gradient Background */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
+}
+
+.cart-item div {
+    display: flex;
+    flex-direction: column;
+    color: #0ff; /* Neon Cyan */
+}
+
+.cart-item-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Tombol di Item Keranjang */
+.cart-item-buttons button {
+    padding: 5px 10px;
+    background-color: #ff00ff; /* Neon Magenta */
+    color: white;
+    border: 2px solid #ff00ff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cart-item-buttons button:hover {
+    background-color: #0ff; /* Neon Cyan */
+    border-color: #0ff;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+}
+
+/* Notifikasi */
+#notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #ff00ff, #0ff); /* Neon Gradient */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 0, 255, 0.5);
+    animation: fadeInOut 3s ease forwards;
+    z-index: 1000;
+    font-size: 0.9em;
+}
+
+/* Animasi Notifikasi */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Latar dan efek neon */
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a); /* Gelap dengan aksen */
+    color: #0ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+#payment-container {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(15, 12, 41, 0.9);
+    border: 2px solid #7209b7;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #f72585, 0 0 30px #7209b7;
+    color: #e0e0e0;
+}
+
+#payment-container h3 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#payment-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #0ff;
+}
+
+#payment-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #3a0ca3;
+    border-radius: 5px;
+    background: #1f1f1f;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+#payment-container input:focus {
+    outline: none;
+    border-color: #f72585;
+    box-shadow: 0 0 10px #f72585;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 10px;
+    background: #f72585;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 0 15px #7209b7, 0 0 30px #f72585;
+    transition: all 0.3s ease;
+}
+
+.pay-btn:hover {
+    background: #7209b7;
+    box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
+}
+
+#change-result {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #0ff;
+}
