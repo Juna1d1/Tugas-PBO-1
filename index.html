@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penjualan Snack CyberPunk</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Global Style */
         body {
@@ -15,13 +14,13 @@
             color: #e0e0e0;
             overflow-x: hidden;
         }
-
+        
         /* Cyberpunk Glow */
         .cyberpunk-glow {
             text-shadow: 0 0 5px #f72585, 0 0 10px #f72585, 0 0 20px #f72585, 
                          0 0 40px #7209b7, 0 0 80px #7209b7, 0 0 120px #7209b7;
         }
-
+        
         /* Login Section */
         .login-container {
             display: flex;
@@ -29,7 +28,7 @@
             align-items: center;
             height: 100vh;
         }
-
+        
         .login-card {
             background: rgba(15, 12, 41, 0.9);
             border: 1px solid #7209b7;
@@ -41,13 +40,13 @@
             color: #e0e0e0;
             box-shadow: 0 0 15px #f72585, 0 0 30px #7209b7;
         }
-
+        
         .login-card h2 {
             margin-bottom: 20px;
             font-size: 1.8rem;
             color: #fff;
         }
-
+        
         .login-card input {
             width: 100%;
             padding: 10px;
@@ -58,13 +57,13 @@
             font-size: 1rem;
             color: #e0e0e0;
         }
-
+        
         .login-card input:focus {
             border-color: #f72585;
             outline: none;
             box-shadow: 0 0 10px #f72585;
         }
-
+        
         .login-card button {
             width: 100%;
             padding: 10px;
@@ -77,17 +76,17 @@
             box-shadow: 0 0 15px #f72585, 0 0 30px #7209b7;
             transition: all 0.3s ease;
         }
-
+        
         .login-card button:hover {
             background: #f72585;
             box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
         }
-
+        
         .logout-container {
             text-align: center;
             margin: 20px;
         }
-
+        
         .logout-btn {
             padding: 10px 20px;
             background: #f72585;
@@ -99,12 +98,12 @@
             box-shadow: 0 0 15px #7209b7, 0 0 30px #f72585;
             transition: all 0.3s ease;
         }
-
+        
         .logout-btn:hover {
             background: #7209b7;
             box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
         }
-
+        
         /* Snack Section */
         #snack-section {
             max-width: 1200px;
@@ -112,7 +111,22 @@
             padding: 20px;
             color: #e0e0e0;
         }
-
+        
+        /* Header */
+        .snack-header {
+            text-align: center;
+            background: linear-gradient(to right, #6a0572, #a81b92);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
+        }
+        
+        .snack-header h1 {
+            font-size: 2.5rem;
+        }
+        
         /* Snack Cards */
         .snack-container {
             display: flex;
@@ -121,7 +135,7 @@
             flex-wrap: wrap;
             padding: 20px;
         }
-
+        
         .snack-card {
             background: rgba(15, 12, 41, 0.9);
             border-radius: 10px;
@@ -131,31 +145,31 @@
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
+        
         .snack-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
         }
-
+        
         .snack-card img {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 15px;
             box-shadow: 0 0 15px #3a0ca3;
         }
-
+        
         .snack-card h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
             color: #fff;
         }
-
+        
         .snack-card p {
             font-size: 1.2rem;
             margin-bottom: 15px;
             color: #e0e0e0;
         }
-
+        
         .snack-card button {
             padding: 10px 20px;
             background: #f72585;
@@ -167,12 +181,12 @@
             box-shadow: 0 0 15px #7209b7;
             transition: background 0.3s;
         }
-
+        
         .snack-card button:hover {
             background: #7209b7;
             box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
         }
-
+        
         /* Notification */
         #notification {
             position: fixed;
@@ -187,22 +201,22 @@
             z-index: 1000;
             font-size: 0.9em;
         }
-
+        
         @keyframes fadeInOut {
             0% { opacity: 0; transform: translateY(-20px); }
             10% { opacity: 1; transform: translateY(0); }
             90% { opacity: 1; transform: translateY(0); }
             100% { opacity: 0; transform: translateY(-20px); }
         }
-
-        /* Cart Actions */
+        
+        /* Tombol Aksi Keranjang */
         .cart-actions {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin: 20px 0;
         }
-
+        
         .cart-action-btn {
             padding: 10px 20px;
             background-color: #0ff; /* Neon Cyan */
@@ -213,42 +227,42 @@
             font-size: 1em;
             transition: transform 0.3s, background-color 0.3s;
         }
-
+        
         .cart-action-btn:hover {
             background-color: #ff00ff; /* Neon Magenta */
             color: #fff;
             transform: scale(1.1);
         }
-
-        /* Cart List */
+        
+        /* Daftar Item di Keranjang */
         #cart-list {
             margin: 20px 0;
         }
-
-        /* Cart Item */
+        
+        /* Item Keranjang */
         .cart-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #1a1a1a, #333);
+            background: linear-gradient(135deg, #1a1a1a, #333); /* Gradient Background */
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
         }
-
+        
         .cart-item div {
             display: flex;
             flex-direction: column;
             color: #0ff; /* Neon Cyan */
         }
-
+        
         .cart-item-buttons {
             display: flex;
             gap: 10px;
         }
-
-        /* Cart Item Buttons */
+        
+        /* Tombol di Item Keranjang */
         .cart-item-buttons button {
             padding: 5px 10px;
             background-color: #ff00ff; /* Neon Magenta */
@@ -258,15 +272,44 @@
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        . cart-item-buttons button:hover {
+        
+        .cart-item-buttons button:hover {
             background-color: #0ff; /* Neon Cyan */
             border-color: #0ff;
             transform: scale(1.1);
             box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
         }
-
-        /* Payment Container */
+        
+        /* Notifikasi */
+        #notification {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #ff00ff, #0ff); /* Neon Gradient */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(255, 0, 255, 0.5);
+            animation: fadeInOut 3s ease forwards;
+            z-index: 1000;
+            font-size: 0.9em;
+        }
+        
+        /* Animasi Notifikasi */
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+        
+        /* Latar dan efek neon */
+        body {
+            background: linear-gradient(135deg, #000000, #1a1a1a); /* Gelap dengan aksen */
+            color: #0ff;
+            font-family: 'Poppins', sans-serif;
+        }
+        
         #payment-container {
             margin: 20px 0;
             padding: 20px;
@@ -276,20 +319,20 @@
             box-shadow: 0 0 15px #f72585, 0 0 30px #7209b7;
             color: #e0e0e0;
         }
-
+        
         #payment-container h3 {
             color: #fff;
             text-align: center;
             margin-bottom: 10px;
         }
-
+        
         #payment-container label {
             display: block;
             margin-bottom: 10px;
             font-size: 1rem;
             color: #0ff;
         }
-
+        
         #payment-container input {
             width: 100%;
             padding: 10px;
@@ -300,13 +343,13 @@
             color: #e0e0e0;
             font-size: 1rem;
         }
-
+        
         #payment-container input:focus {
             outline: none;
             border-color: #f72585;
             box-shadow: 0 0 10px #f72585;
         }
-
+        
         .pay-btn {
             width: 100%;
             padding: 10px;
@@ -319,12 +362,12 @@
             box-shadow: 0 0 15px #7209b7, 0 0 30px #f72585;
             transition: all 0.3s ease;
         }
-
+        
         .pay-btn:hover {
             background: #7209b7;
             box-shadow: 0 0 20px #f72585, 0 0 40px #7209b7;
         }
-
+        
         #change-result {
             margin-top: 10px;
             font-size: 1.2rem;
@@ -332,6 +375,7 @@
             color: #0ff;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Login Section -->
@@ -360,7 +404,6 @@
             <span>Total Harga: Rp <strong id="total-price">0</strong></span>
         </div>       
         <div class="cart-actions">
-            <button onclick="buyItems()" class="cart-action-btn">Beli Sekarang</button>
             <button onclick="clearCart()" class="cart-action-btn">Hapus Semua Pesanan</button>
         </div>
         <section class="snack-container">
@@ -402,7 +445,7 @@
         function login() {
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
-
+        
             if (username === "admin" && password === "admin123") {
                 document.getElementById("login-section").style.display = "none";
                 document.getElementById("snack-section").style.display = "block";
@@ -444,17 +487,17 @@
             const cartList = document.getElementById("cart-list");
             const totalItemsElem = document.getElementById("total-items");
             const totalPriceElem = document.getElementById("total-price");
-
+        
             cartList.innerHTML = "";
             let totalItems = 0;
             let totalPrice = 0;
-
+        
             for (const snackName in cart) {
                 const { price, quantity } = cart[snackName];
                 const itemTotal = quantity * price;
                 totalItems += quantity;
                 totalPrice += itemTotal;
-
+            
                 const cartItem = document.createElement("div");
                 cartItem.innerHTML = `
                     ${quantity}x ${snackName} - Rp${itemTotal.toLocaleString('id-ID')}
@@ -463,7 +506,7 @@
                 `;
                 cartList.appendChild(cartItem);
             }
-
+        
             totalItemsElem.textContent = totalItems;
             totalPriceElem.textContent = totalPrice.toLocaleString('id-ID');
         }
@@ -471,17 +514,18 @@
         document.getElementById('pay-btn').addEventListener('click', function () {
             const inputMoney = parseInt(document.getElementById('input-money').value);
             const totalPrice = Object.values(cart).reduce((sum, item) => sum + item.price * item.quantity, 0);
-
+        
             if (isNaN(inputMoney) || inputMoney <= 0) {
                 alert('Masukkan jumlah uang yang valid!');
                 return;
             }
-
+        
             if (inputMoney < totalPrice) {
                 alert('Uang yang diberikan tidak cukup!');
             } else {
                 const change = inputMoney - totalPrice;
-                document.getElementById('change-result').textContent = change > 0 
+                document.getElementById('change-result').textContent = 
+                    change > 0 
                     ? `Kembalian: Rp${change.toLocaleString('id-ID')}`
                     : 'Uang pas.';
                 cart = {};
@@ -494,10 +538,23 @@
             if (confirmation) {
                 localStorage.clear();
                 sessionStorage.clear();
+            
                 window.location.href = 'index.html';
             }
         });
 
+        // Fungsi untuk mengurangi item dari keranjang
+        function removeFromCart(snackName) {
+            if (cart[snackName]) {
+                cart[snackName].quantity--;
+                if (cart[snackName].quantity <= 0) {
+                    delete cart[snackName];
+                }
+            }
+            updateCart();
+        }
+
+        // Fungsi untuk menghapus item sepenuhnya dari keranjang
         function deleteFromCart(snackName) {
             if (cart[snackName]) {
                 delete cart[snackName];
@@ -505,6 +562,47 @@
             updateCart();
         }
 
+        // Fungsi untuk memperbarui tampilan keranjang
+        function updateCart() {
+            const cartList = document.getElementById("cart-list");
+            const totalItemsElem = document.getElementById("total-items");
+            const totalPriceElem = document.getElementById("total-price");
+        
+            cartList.innerHTML = ""; // Bersihkan daftar sebelumnya
+            let totalItems = 0;
+            let totalPrice = 0;
+        
+            for (const snackName in cart) {
+                const item = cart[snackName];
+                const itemTotal = item.quantity * item.price;
+            
+                totalItems += item.quantity;
+                totalPrice += itemTotal;
+            
+                // Buat elemen item keranjang
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+            
+                cartItem.innerHTML = `
+                    <div>
+                        <strong>${item.quantity} x ${snackName}</strong>
+                        <p>@Rp${item.price.toLocaleString()}</p>
+                        <p>Total: Rp${itemTotal.toLocaleString()}</p>
+                    </div>
+                    <div class="cart-item-buttons">
+                        <button onclick="addToCart(${item.price}, '${snackName}')">+</button>
+                        <button onclick="removeFromCart('${snackName}')">-</button>
+                        <button onclick="deleteFromCart('${snackName}')">🗑️</button>
+                    </div>
+                `;
+                cartList.appendChild(cartItem);
+            }
+        
+            totalItemsElem.textContent = totalItems;
+            totalPriceElem.textContent = totalPrice.toLocaleString();
+        }
+
+        // Fungsi untuk membeli semua item di keranjang
         function buyItems() {
             if (Object.keys(cart).length === 0) {
                 alert("Keranjang Anda kosong!");
@@ -514,12 +612,19 @@
             clearCart();
         }
 
+        // Fungsi untuk menghapus semua item di keranjang
         function clearCart() {
             for (const key in cart) {
                 delete cart[key];
             }
             updateCart();
         }
+
+        // Hitung total harga berdasarkan item di keranjang
+        let cartItems = [
+            { name: "Snack 1", price: 200000, quantity: 1 },
+            { name: "Snack 2", price: 300000, quantity: 1 }
+        ];
     </script>
 </body>
 </html>
