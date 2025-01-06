@@ -595,6 +595,75 @@
             }
             updateCart();
         }
+
+        {
+            "name": "Snack CyberPunk",
+            "short_name": "SnackPunk",
+            "description": "Penjualan Snack CyberPunk",
+            "start_url": "/",
+            "display": "standalone",
+            "background_color": "#0f0c29",
+            "theme_color": "#f72585",
+            "icons": [
+                {
+                    "src": "icons/icon-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icons/icon-512x512.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        }
+
+        const CACHE_NAME = 'snack-pwa-cache-v1';
+        const urlsToCache = [
+            '/',
+            '/index.html',
+            '/manifest.json',
+            '/style.css',  // Adjust this path if needed
+            '/app.js',     // Adjust this path if needed
+            '/icons/icon-192x192.png',
+            '/icons/icon-512x512.png',
+            // Add other resources like images and fonts
+        ];
+        
+        self.addEventListener('install', (event) => {
+            event.waitUntil(
+                caches.open(CACHE_NAME)
+                    .then((cache) => {
+                        return cache.addAll(urlsToCache);
+                    })
+            );
+        });
+        
+        self.addEventListener('activate', (event) => {
+            const cacheWhitelist = [CACHE_NAME];
+            event.waitUntil(
+                caches.keys().then((cacheNames) => {
+                    return Promise.all(
+                        cacheNames.map((cacheName) => {
+                            if (!cacheWhitelist.includes(cacheName)) {
+                                return caches.delete(cacheName);
+                            }
+                        })
+                    );
+                })
+            );
+        });
+        
+        self.addEventListener('fetch', (event) => {
+            event.respondWith(
+                caches.match(event.request).then((cachedResponse) => {
+                    if (cachedResponse) {
+                        return cachedResponse;
+                    }
+                    return fetch(event.request);
+                })
+            );
+        });
     </script>
 </body>
 </html>
